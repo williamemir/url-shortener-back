@@ -9,12 +9,6 @@ import (
 func main() {
 	router := gin.Default()
 
-	router.GET("/", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"data": "Hello from Gin-gonic & mongoDB",
-		})
-	})
-
 	routes.URLShortRoute(router)
 
 	configs.ConnectDB()
@@ -23,5 +17,5 @@ func main() {
 		fmt.Println(utils.RandomString(10))
 	}*/
 
-	router.Run(":8080")
+	router.Run("localhost:8080")
 }
